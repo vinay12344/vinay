@@ -1,1 +1,86 @@
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CustomGraph user guide</title>
+        <link rel = "icon" href = 
+        https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/d301f744-8a3e-450f-9cb8-c9c3fb7cab48.png?ixlib=react-9.0.3&ch=Width%2CDPR&auto=format&w=1678
+                type = "image/x-icon">
+    </head>
+    <style>
+        h2 {text-align: center;}
+    </style>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        </style>
+    <body style="background-color:rgb(226, 242, 238)">
+        <h2 style="color:hwb(253 37% 7%);">User guide for CustomGraph</h3>
+        <h4 style="color:hwb(0 9% 90%);"> CustomGraph Plugin</h4>
+        <p> In this CustomGraph plugin, we can plot graphs between any of the desired parameters for any desired protocol.
+            Here, we have fields like filter, x-axis, y-axis, Apply, Reset, Save; where each field have a different operation to perform.
+            <h4>Filter:</h4>
+            <p>This filter field is a  text edit where we need to enter the required filter that we want to apply for the desired protocol.</p>
+            <h4>X-axis:</h4>
+            <p>This X-axis field is a text edit where we can manually enter the desired parameter that we want to plot in the x-axis in the graph.</p>
+            <h4>Y-axis:</h4>
+            <p>This Y-axis field is a text edit where we can manually enter the desired parameter that we want to plot in the y-axis in the graph.</p>
+            <h4>Apply:</h4>
+            <p>This is a push button which helps in applying the entered filters and parameters of x-axis and y-axis.</p>
+            <h4>Reset:</h4>
+            <p>This is a push button which helps in resetting the graph according to pre-defined dimensions.</p>
+            <h4>Save:</h4>
+            <p>This is a push button which helps in saving the graph that is plotted at the user desired location.</p>
+        </p>
+        <h3><u>Note</u></h3>
+        <p style="padding: 10px; border: 2px solid black;">*User need to enter the desired x-axis and y-axis parameters between which we wants to plot the graph.User can also enter the filter he required and click on apply button to see the results(plottings). There is also a flexibility to zoom and drag the graph. If we want to reset the graph to its origin or pre-defined dimensions, we need to click the reset button.If we want to save the graph, we need to click the save button an show the desired path to save it. </p>
+    </body>
+    <body>
+        <h3>Few pre-described Keywords for fields</h3>
+        <table>
+            <tr>
+                <th>Key(Parameter) </th>
+                <th> Value(Field name)</th>
+            </tr>
+            <tr>
+                <td>time</td>
+                <td>frame.time_relative</td>
+            </tr>
+            <tr>
+                <td>tcpseqno (tcp sequence number)</td>
+                <td>tcp.seq</td>
+            </tr>
+            <tr>
+                <td>tcpackno (tcp acknowledgment number)</td>
+                <td>tcp.ack</td>
+            </tr>
+            <tr>
+                <td>correction (ptp correction)</td>
+                <td>ptp.v2.correction.ns</td>
+            </tr>
+            <tr>
+                <td>ptpts (ptp time stamp)</td>
+                <td>ptp.v2.sdr.origintimestamp.seconds</td>
+            </tr>
+            <tr>
+                <td>avtpts (avtp time stamp)</td>
+                <td>aaf.avtp_timestamp</td>
+            </tr>
+            <tr>
+                <td>avtpseqno (avtp sequence number)</td>
+                <td>aaf.seqnum</td>
+            </tr>
+            <tr>
+                <td>epochtime(Epoch time)</td>
+                <td>frame.time_epoch</td>
+            </tr>
+        </table>
+        <p>*If you want to give a non pre-described keyword, you can copy the fieldname from wireshark and paste it in the desired x-axis or y-axis field. The above dictionary is created to make the user work easy in the way that, instead of entering the field name, user can enter only the key.This feature is added for user convinience. User can also copy and paste the above pre-described fieldnames for his desired outcome.</p>
+    </body>
+    <body>
+        <h3>Switch Direction:</h3>
+        <p>Switch Direction is a push button that switches the conversation between the source and destination ip addresses. A limitation in this switch direction button is that, this function doesn’t work for ipv6 protocol. We wrote a condition to check if the ip address list and port number list is empty or contains data.</p>
+    </body>
+</html>
