@@ -19,7 +19,7 @@
     <body style="background-color:rgb(226, 242, 238)">
         <h2 style="color:hwb(253 37% 7%);">User guide for CustomGraph</h3>
         <h4 style="color:hwb(0 9% 90%);"> CustomGraph Plugin</h4>
-        <p> In this CustomGraph plugin, we can plot graphs between any of the desired parameters for any desired protocol.
+        <p> In this CustomGraph plugin, we can plot graphs between two fields(data should be integer or (float or double)).
             Here, we have fields like filter, x-axis, y-axis, Apply, Reset, Save; where each field have a different operation to perform.
             <h4>Filter:</h4>
             <p>This filter field is a  text edit where we need to enter the required filter that we want to apply for the desired protocol.</p>
@@ -61,10 +61,6 @@
                 <td>ptp.v2.correction.ns</td>
             </tr>
             <tr>
-                <td>ptpts (ptp time stamp)</td>
-                <td>ptp.v2.sdr.origintimestamp.seconds</td>
-            </tr>
-            <tr>
                 <td>avtpts (avtp time stamp)</td>
                 <td>aaf.avtp_timestamp</td>
             </tr>
@@ -73,7 +69,7 @@
                 <td>aaf.seqnum</td>
             </tr>
             <tr>
-                <td>epochtime(Epoch time)</td>
+                <td>epoch(Epoch time)</td>
                 <td>frame.time_epoch</td>
             </tr>
         </table>
