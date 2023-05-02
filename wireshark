@@ -79,4 +79,17 @@
         <h3>Switch Direction:</h3>
         <p>Switch Direction is a push button that switches the conversation between the source and destination ip addresses. A limitation in this switch direction button is that, this function doesn’t work for ipv6 protocol. We wrote a condition to check if the ip address list and port number list is empty or contains data.</p>
     </body>
+	<h3>TCP Conversation Completeness:</h3>
+	<p>TCP conversations are said to be complete when they have both opening and closing handshakes, independently of any data transfer. However, we might be interested in identifying complete conversations with some data sent, and we are using the following bit values to build a filter value on the tcp.completeness field :</p>
+	<ul style="list-style-type:disc;">
+  	<li>1 : SYN</li>
+  	<li>2 : SYN-ACK</li>
+  	<li>4 : ACK</li>
+	<li>8 : DATA</li>
+	<li>16 : FIN</li>
+	<li>32 : RST</li>
+	</ul> 
+	<p>For example, a conversation containing only a three-way handshake will be found with the filter 'tcp.completeness==7' (1+2+4) while a complete conversation with data transfer will be found with a longer filter as closing a connection can be associated with FIN or RST packets, or even both : 'tcp.completeness==31 or tcp.completeness==47 or tcp.completeness==63'.</p>
+    <body>
+
 </html>
